@@ -30,26 +30,27 @@
         {
             this.User = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Feeders = new System.Windows.Forms.DataGridViewImageColumn();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Feeders = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.User.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // User
@@ -78,6 +79,22 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Feeders";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Feeders});
+            this.dataGridView2.Location = new System.Drawing.Point(123, 92);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView2.TabIndex = 8;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // Feeders
+            // 
+            this.Feeders.HeaderText = "Feeders";
+            this.Feeders.Name = "Feeders";
             // 
             // textBox2
             // 
@@ -126,12 +143,12 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Controls.Add(this.textBox1);
             this.tabPage3.Controls.Add(this.dataGridView1);
             this.tabPage3.Controls.Add(this.button6);
             this.tabPage3.Controls.Add(this.button5);
             this.tabPage3.Controls.Add(this.button4);
-            this.tabPage3.Controls.Add(this.checkedListBox1);
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -140,12 +157,19 @@
             this.tabPage3.Text = "Timetable and log";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(189, 40);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(108, 20);
+            this.textBox1.TabIndex = 8;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(125, 192);
+            this.dataGridView1.Location = new System.Drawing.Point(137, 227);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(223, 117);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -179,20 +203,6 @@
             this.button4.Text = "Export";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Feeder1",
-            "Feeder2",
-            "Feeder3",
-            "Feeder4"});
-            this.checkedListBox1.Location = new System.Drawing.Point(187, 92);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
-            this.checkedListBox1.TabIndex = 2;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -202,28 +212,13 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Set interval for feeders";
             // 
-            // dataGridView2
+            // dataGridView3
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Feeders});
-            this.dataGridView2.Location = new System.Drawing.Point(123, 92);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView2.TabIndex = 8;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(189, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(108, 20);
-            this.textBox1.TabIndex = 8;
-            // 
-            // Feeders
-            // 
-            this.Feeders.HeaderText = "Feeders";
-            this.Feeders.Name = "Feeders";
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(156, 95);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(184, 77);
+            this.dataGridView3.TabIndex = 9;
             // 
             // Form1
             // 
@@ -236,10 +231,11 @@
             this.User.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -251,7 +247,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
@@ -263,6 +258,7 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewImageColumn Feeders;
+        private System.Windows.Forms.DataGridView dataGridView3;
     }
 }
 
