@@ -16,7 +16,12 @@ namespace app
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new ChooseRole());
+            Application.Run(new UserLogin());
+            
             Application.Run(new Form1());
+            Application.Run(new Admin());
+
         }
     }
 }

@@ -16,10 +16,21 @@ namespace app
         {
             InitializeComponent();
         }
-
+        UserLogin login = new UserLogin();
+        Admin admin = new Admin();
         private void button2_Click(object sender, EventArgs e)
         {
+            Hide();
+    
+            login.Show();
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Hide();
+
+            admin.Show();
         }
     }
 }
