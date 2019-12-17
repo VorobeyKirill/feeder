@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Presenter.Forms
 {
-    public interface IView
+    public interface IChooseRoleView : IView
     {
-
-        void Show();
-        void Close();
+        event Action ChooseAdmin;
+        event Action ChooseUser;
     }
 }

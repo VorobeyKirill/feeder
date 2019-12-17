@@ -11,7 +11,7 @@ namespace Presenter
 {
     public class UserPresenter : AbstractPresenter
     {
-        public UserPresenter(IKernel kernel, UserService service, IUser view)
+        public UserPresenter(IKernel kernel, UserService service, IUserView view)
         {
             _kernel = kernel;
             _service = service;

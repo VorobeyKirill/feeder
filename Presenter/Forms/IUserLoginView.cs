@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Presenter.Forms
 {
-    public interface IView
+    public interface IUserLoginView : IView
     {
-
-        void Show();
-        void Close();
+        string UserName { get; }
+        event Action SignIn;
     }
 }

@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject, Version=3.3.3.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.3\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.3.1.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.3.1\lib\net45\Ninject.Web.Common.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,37 +52,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs">
+    <Compile Include="AdminView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin.Designer.cs">
-      <DependentUpon>Admin.cs</DependentUpon>
+    <Compile Include="AdminView.Designer.cs">
+      <DependentUpon>AdminView.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChooseRole.cs">
+    <Compile Include="ChooseRoleView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChooseRole.Designer.cs">
-      <DependentUpon>ChooseRole.cs</DependentUpon>
+    <Compile Include="ChooseRoleView.Designer.cs">
+      <DependentUpon>ChooseRoleView.cs</DependentUpon>
     </Compile>
-    <Compile Include="User.cs">
+    <Compile Include="UserView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User.Designer.cs">
-      <DependentUpon>User.cs</DependentUpon>
+    <Compile Include="UserView.Designer.cs">
+      <DependentUpon>UserView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserLogin.cs">
+    <Compile Include="UserLoginView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserLogin.Designer.cs">
-      <DependentUpon>UserLogin.cs</DependentUpon>
+    <Compile Include="UserLoginView.Designer.cs">
+      <DependentUpon>UserLoginView.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Admin.resx">
-      <DependentUpon>Admin.cs</DependentUpon>
+    <EmbeddedResource Include="AdminView.resx">
+      <DependentUpon>AdminView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChooseRole.resx">
-      <DependentUpon>ChooseRole.cs</DependentUpon>
+    <EmbeddedResource Include="ChooseRoleView.resx">
+      <DependentUpon>ChooseRoleView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,12 +93,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="User.resx">
-      <DependentUpon>User.cs</DependentUpon>
+    <EmbeddedResource Include="UserView.resx">
+      <DependentUpon>UserView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserLogin.resx">
-      <DependentUpon>UserLogin.cs</DependentUpon>
+    <EmbeddedResource Include="UserLoginView.resx">
+      <DependentUpon>UserLoginView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -105,6 +112,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{d1455fc6-0c44-43db-b882-ba55ffedb4b6}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Presenter\Presenter.csproj">
+      <Project>{8739884c-0767-4bb2-8ce9-8e878aba95f9}</Project>
+      <Name>Presenter</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

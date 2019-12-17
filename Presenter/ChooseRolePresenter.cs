@@ -11,11 +11,24 @@ namespace Presenter
 {
     public class ChooseRolePresenter : AbstractPresenter 
     {
-        public ChooseRolePresenter(IKernel kernel, ChooseRoleService service, IChooseRole view)
+        public ChooseRolePresenter(IKernel kernel, ChooseRoleService service, IChooseRoleView view)
         {
             _kernel = kernel;
             _service = service;
             _view = view;
+
+            (_view as IChooseRoleView).ChooseAdmin += () => ChooseAdmin();
+            (_view as IChooseRoleView).ChooseUser += () => ChooseUser();
+        }
+
+        private void ChooseAdmin()
+        {
+            _kernel.Get<AdminPresenter>().Run();
+        }
+
+        private void ChooseUser()
+        {
+            _kernel.Get<UserLoginPresenter>().Run();
         }
     }
 }

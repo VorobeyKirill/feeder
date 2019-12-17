@@ -77,10 +77,10 @@
     <Compile Include="AbstractPresenter.cs" />
     <Compile Include="AdminPresenter.cs" />
     <Compile Include="ChooseRolePresenter.cs" />
-    <Compile Include="Forms\IAdmin.cs" />
-    <Compile Include="Forms\IChooseRole.cs" />
-    <Compile Include="Forms\ILoginUser.cs" />
-    <Compile Include="Forms\IUser.cs" />
+    <Compile Include="Forms\IAdminView.cs" />
+    <Compile Include="Forms\IChooseRoleView.cs" />
+    <Compile Include="Forms\IUserLoginView.cs" />
+    <Compile Include="Forms\IUserView.cs" />
     <Compile Include="Forms\IView.cs" />
     <Compile Include="UserLoginPresenter.cs" />
     <Compile Include="UserPresenter.cs" />
