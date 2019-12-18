@@ -13,14 +13,17 @@ namespace View
 {
     public partial class ChooseRoleView : Form, IChooseRoleView
     {
+        private bool _isAdmin;
         public ChooseRoleView()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
+        public event Action ChooseAdmin;
+        public event Action ChooseUser;
 
+        public new void Show()
+        {
         }
     }
 }

@@ -11,9 +11,9 @@ namespace Presenter
 {
     public class UserLoginPresenter : AbstractPresenter
     {
-        private IUserLoginView _view;
-        private IUserLoginService _service;
-        public UserLoginPresenter(IKernel kernel, UserLoginService service, IUserLoginView view)
+        private readonly IUserLoginView _view;
+        private readonly IUserLoginService _service;
+        public UserLoginPresenter(IKernel kernel, IUserLoginService service, IUserLoginView view)
         {
             _kernel = kernel;
             _service = service;
@@ -26,6 +26,7 @@ namespace Presenter
         {
             // need user auth
             _kernel.Get<UserPresenter>().Run();
-            
+
+        }
     }
 }

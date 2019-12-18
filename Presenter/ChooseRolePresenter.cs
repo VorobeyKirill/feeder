@@ -11,7 +11,7 @@ namespace Presenter
 {
     public class ChooseRolePresenter : AbstractPresenter 
     {
-        public ChooseRolePresenter(IKernel kernel, ChooseRoleService service, IChooseRoleView view)
+        public ChooseRolePresenter(IKernel kernel, IChooseRoleService service, IChooseRoleView view)
         {
             _kernel = kernel;
             _service = service;

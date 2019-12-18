@@ -2,21 +2,17 @@
 using Ninject;
 using Presenter.Forms;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using View;
 
 namespace View
 {
-    static class Program
+    public static class Program
     {
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Ninject.StandardKernel kernel = new StandardKernel();
             kernel.Bind<ApplicationContext>().ToConstant(new ApplicationContext());
@@ -29,7 +25,7 @@ namespace View
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UserLoginView());
+            Application.Run(new ChooseRoleView());
         }
         internal class WinFormTimer : System.Windows.Forms.Timer, ITimer { }
 

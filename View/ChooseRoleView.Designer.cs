@@ -1,4 +1,6 @@
-﻿namespace View
+﻿using System;
+
+namespace View
 {
     partial class ChooseRoleView
     {
@@ -28,30 +30,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.SelectAdmin = new System.Windows.Forms.Button();
+            this.SelectUser = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // SelectAdmin
             // 
-            this.button1.Location = new System.Drawing.Point(66, 44);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 45);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Admin";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SelectAdmin.Location = new System.Drawing.Point(66, 44);
+            this.SelectAdmin.Name = "SelectAdmin";
+            this.SelectAdmin.Size = new System.Drawing.Size(128, 45);
+            this.SelectAdmin.TabIndex = 0;
+            this.SelectAdmin.Text = "Admin";
+            this.SelectAdmin.UseVisualStyleBackColor = true;
+            this.SelectAdmin.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // SelectUser
             // 
-            this.button2.Location = new System.Drawing.Point(264, 44);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 45);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "User";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.SelectUser.Location = new System.Drawing.Point(264, 44);
+            this.SelectUser.Name = "SelectUser";
+            this.SelectUser.Size = new System.Drawing.Size(128, 45);
+            this.SelectUser.TabIndex = 1;
+            this.SelectUser.Text = "User";
+            this.SelectUser.UseVisualStyleBackColor = true;
+            this.SelectUser.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
             // 
@@ -61,25 +64,35 @@
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 2;
             // 
-            // ChooseRole
+            // ChooseRoleView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 261);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Name = "ChooseRole";
+            this.Controls.Add(this.SelectUser);
+            this.Controls.Add(this.SelectAdmin);
+            this.Name = "ChooseRoleView";
             this.Text = "ChooseRole";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button SelectAdmin;
+        private System.Windows.Forms.Button SelectUser;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
