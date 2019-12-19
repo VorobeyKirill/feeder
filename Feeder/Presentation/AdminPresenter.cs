@@ -8,14 +8,14 @@ namespace Feeder.Presenter.Implementations
 {
     public class AdminPresenter : IAdminPresenter
     {
-        private readonly IAdminService _adminService;
+        private readonly IUserService _userService;
         private readonly IAdminView _adminView;
         private IKernel _kernel;
 
-        public AdminPresenter(IKernel kernel, AdminService adminService, IAdminView view)
+        public AdminPresenter(IKernel kernel, UserService userService, IAdminView view)
         {
             _kernel = kernel;
-            _adminService = adminService;
+            _userService = userService;
             _adminView = view;
             _adminView.registerNewUser += RegisterNewUser;
         }
@@ -24,7 +24,7 @@ namespace Feeder.Presenter.Implementations
         {
             var user = new User();
             user.name = name;
-            _adminService.RegisterUser(user);
+            _userService.RegisterUser(user);
         }
 
         public void Run()

@@ -9,15 +9,5 @@ namespace Model.Service
 {
     public class AdminService : IAdminService
     {
-        private readonly IRepository<User> usersRepository;
-        public AdminService(IRepository<User> repository)
-        {
-            usersRepository = repository;
-        }
-
-        public void RegisterUser(User user)
-        {
-            usersRepository.Add(user);
-        }
     }
 }

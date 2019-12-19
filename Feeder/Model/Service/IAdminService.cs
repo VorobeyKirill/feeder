@@ -9,6 +9,5 @@ namespace Model.Service
 {
     public interface IAdminService : IService
     {
-        void RegisterUser(User user);
     }
 }
