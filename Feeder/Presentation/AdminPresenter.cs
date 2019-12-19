@@ -12,10 +12,6 @@ namespace Feeder.Presenter.Implementations
         private readonly IAdminView _adminView;
         private IKernel _kernel;
 
-        public AdminPresenter()
-        {
-        }
-
         public AdminPresenter(IKernel kernel, AdminService adminService, IAdminView view)
         {
             _kernel = kernel;
@@ -32,10 +28,8 @@ namespace Feeder.Presenter.Implementations
         }
 
         public void Run()
-        {
-            
+        { 
             _adminView.Show();
-            
         }
     }
 }

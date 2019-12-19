@@ -12,7 +12,7 @@ namespace Model
         int Add(T obj);
         void Update(T obj);
         void Remove(int id);
-        void Save();
+        //void Save();
         T Find(int id);
         IEnumerable<T> GetAll();
 

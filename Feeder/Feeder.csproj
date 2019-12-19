@@ -74,6 +74,7 @@
     <Compile Include="Presentation\IChooseRolePresenter.cs" />
     <Compile Include="Presentation\IUserLoginPresenter.cs" />
     <Compile Include="Presentation\IUserPresenter.cs" />
+    <Compile Include="Repositories\UsersRepository.cs" />
     <Compile Include="View\IAdminView.cs" />
     <Compile Include="View\IChooseRoleView.cs" />
     <Compile Include="View\IUserLoginView.cs" />

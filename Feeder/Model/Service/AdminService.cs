@@ -17,11 +17,7 @@ namespace Model.Service
 
         public void RegisterUser(User user)
         {
-            var isNameAvailable = usersRepository.GetAll().FirstOrDefault(el => el.name == user.name);
-            if (isNameAvailable == null)
-            {
-                usersRepository.Add(user);
-            }
+            usersRepository.Add(user);
         }
     }
 }
