@@ -1,4 +1,6 @@
-﻿using Model;
+﻿using Feeder.Presentation;
+using Feeder.Presenter.Implementations;
+using Model;
 using Model.Service;
 using Ninject;
 using Presenter;
@@ -34,6 +36,7 @@ namespace Feeder
             kernel.Bind<IChooseRoleService>().To<ChooseRoleService>();
             kernel.Bind<IUserLoginService>().To<UserLoginService>();
             kernel.Bind<IUserService>().To<UserService>();
+            kernel.Bind<IAdminPresenter>().ToConstant(new AdminPresenter(kernel.Get<IAdminView>())).InSingletonScope();
 
             kernel.Get<ChooseRolePresenter>().Run();
             Application.Run(kernel.Get<ApplicationContext>());

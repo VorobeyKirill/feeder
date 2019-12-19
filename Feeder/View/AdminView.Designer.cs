@@ -30,6 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.mainPage = new System.Windows.Forms.TabPage();
+            this.userSelect = new System.Windows.Forms.ComboBox();
+            this.feederNameInput = new System.Windows.Forms.TextBox();
+            this.userNameInput = new System.Windows.Forms.TextBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.userList = new System.Windows.Forms.DataGridView();
             this.addFeeder = new System.Windows.Forms.Button();
@@ -37,9 +40,6 @@
             this.logPage = new System.Windows.Forms.TabPage();
             this.logs = new System.Windows.Forms.DataGridView();
             this.exportLog = new System.Windows.Forms.Button();
-            this.userNameInput = new System.Windows.Forms.TextBox();
-            this.feederNameInput = new System.Windows.Forms.TextBox();
-            this.userSelect = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.mainPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -59,7 +59,7 @@
             this.tabControl1.Size = new System.Drawing.Size(510, 342);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // mainPage
             // 
             this.mainPage.Controls.Add(this.userSelect);
             this.mainPage.Controls.Add(this.feederNameInput);
@@ -69,12 +69,36 @@
             this.mainPage.Controls.Add(this.addFeeder);
             this.mainPage.Controls.Add(this.addUser);
             this.mainPage.Location = new System.Drawing.Point(4, 22);
-            this.mainPage.Name = "tabPage1";
+            this.mainPage.Name = "mainPage";
             this.mainPage.Padding = new System.Windows.Forms.Padding(3);
             this.mainPage.Size = new System.Drawing.Size(502, 316);
             this.mainPage.TabIndex = 0;
             this.mainPage.Text = "Register and add feeders";
             this.mainPage.UseVisualStyleBackColor = true;
+            this.mainPage.Click += new System.EventHandler(this.mainPage_Click);
+            // 
+            // userSelect
+            // 
+            this.userSelect.FormattingEnabled = true;
+            this.userSelect.Location = new System.Drawing.Point(209, 266);
+            this.userSelect.Name = "userSelect";
+            this.userSelect.Size = new System.Drawing.Size(121, 21);
+            this.userSelect.TabIndex = 10;
+            // 
+            // feederNameInput
+            // 
+            this.feederNameInput.Location = new System.Drawing.Point(101, 267);
+            this.feederNameInput.Name = "feederNameInput";
+            this.feederNameInput.Size = new System.Drawing.Size(100, 20);
+            this.feederNameInput.TabIndex = 9;
+            // 
+            // userNameInput
+            // 
+            this.userNameInput.Location = new System.Drawing.Point(162, 100);
+            this.userNameInput.Name = "userNameInput";
+            this.userNameInput.Size = new System.Drawing.Size(100, 20);
+            this.userNameInput.TabIndex = 8;
+            this.userNameInput.TextChanged += new System.EventHandler(this.userNameInput_TextChanged);
             // 
             // dataGridView3
             // 
@@ -112,13 +136,14 @@
             this.addUser.TabIndex = 1;
             this.addUser.Text = "Register";
             this.addUser.UseVisualStyleBackColor = true;
+            this.addUser.Click += new System.EventHandler(this.addUser_Click);
             // 
-            // tabPage2
+            // logPage
             // 
             this.logPage.Controls.Add(this.logs);
             this.logPage.Controls.Add(this.exportLog);
             this.logPage.Location = new System.Drawing.Point(4, 22);
-            this.logPage.Name = "tabPage2";
+            this.logPage.Name = "logPage";
             this.logPage.Padding = new System.Windows.Forms.Padding(3);
             this.logPage.Size = new System.Drawing.Size(502, 316);
             this.logPage.TabIndex = 1;
@@ -144,35 +169,13 @@
             this.exportLog.UseVisualStyleBackColor = true;
             this.exportLog.Click += new System.EventHandler(this.button4_Click);
             // 
-            // userNameInput
-            // 
-            this.userNameInput.Location = new System.Drawing.Point(162, 100);
-            this.userNameInput.Name = "userNameInput";
-            this.userNameInput.Size = new System.Drawing.Size(100, 20);
-            this.userNameInput.TabIndex = 8;
-            // 
-            // feederNameInput
-            // 
-            this.feederNameInput.Location = new System.Drawing.Point(101, 267);
-            this.feederNameInput.Name = "feederNameInput";
-            this.feederNameInput.Size = new System.Drawing.Size(100, 20);
-            this.feederNameInput.TabIndex = 9;
-            // 
-            // userSelect
-            // 
-            this.userSelect.FormattingEnabled = true;
-            this.userSelect.Location = new System.Drawing.Point(209, 266);
-            this.userSelect.Name = "userSelect";
-            this.userSelect.Size = new System.Drawing.Size(121, 21);
-            this.userSelect.TabIndex = 10;
-            // 
-            // Admin
+            // AdminView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 342);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Admin";
+            this.Name = "AdminView";
             this.Text = "Admin";
             this.tabControl1.ResumeLayout(false);
             this.mainPage.ResumeLayout(false);

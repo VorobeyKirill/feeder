@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Presenter
+namespace Feeder.Presenter.Implementations
 {
     public class AbstractPresenter
     {

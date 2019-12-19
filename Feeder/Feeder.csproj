@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Feeder</RootNamespace>
     <AssemblyName>Feeder</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,8 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    <Reference Include="Ninject, Version=3.3.3.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>packages\Ninject.3.3.3\lib\net45\Ninject.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -67,11 +69,16 @@
     <Compile Include="Presentation\AbstractPresenter.cs" />
     <Compile Include="Presentation\AdminPresenter.cs" />
     <Compile Include="Presentation\ChooseRolePresenter.cs" />
-    <Compile Include="Presentation\Forms\IAdminView.cs" />
-    <Compile Include="Presentation\Forms\IChooseRoleView.cs" />
-    <Compile Include="Presentation\Forms\IUserLoginView.cs" />
-    <Compile Include="Presentation\Forms\IUserView.cs" />
-    <Compile Include="Presentation\Forms\IView.cs" />
+    <Compile Include="Presentation\IAbstractPresenter.cs" />
+    <Compile Include="Presentation\IAdminPresenter.cs" />
+    <Compile Include="Presentation\IChooseRolePresenter.cs" />
+    <Compile Include="Presentation\IUserLoginPresenter.cs" />
+    <Compile Include="Presentation\IUserPresenter.cs" />
+    <Compile Include="View\IAdminView.cs" />
+    <Compile Include="View\IChooseRoleView.cs" />
+    <Compile Include="View\IUserLoginView.cs" />
+    <Compile Include="View\IUserView.cs" />
+    <Compile Include="View\IView.cs" />
     <Compile Include="Presentation\UserLoginPresenter.cs" />
     <Compile Include="Presentation\UserPresenter.cs" />
     <Compile Include="Program.cs" />
@@ -108,6 +115,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\AdminView.resx">
       <DependentUpon>AdminView.cs</DependentUpon>

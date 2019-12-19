@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model.Service.EntityService
+namespace Feeder.Presentation
 {
-    public class UserService
+    interface IAbstractPresenter
     {
     }
 }

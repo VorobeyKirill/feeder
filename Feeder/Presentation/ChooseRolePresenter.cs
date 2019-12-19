@@ -1,4 +1,5 @@
-﻿using Model.Service;
+﻿using Feeder.Presentation;
+using Model.Service;
 using Ninject;
 using Presenter.Forms;
 using System;
@@ -7,10 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Presenter
+namespace Feeder.Presenter.Implementations
 {
-    public class ChooseRolePresenter : AbstractPresenter 
+    public class ChooseRolePresenter : IChooseRolePresenter
     {
+        private IKernel _kernel;
+        private IChooseRoleService _service;
+        private IChooseRoleView _view;
+
         public ChooseRolePresenter(IKernel kernel, IChooseRoleService service, IChooseRoleView view)
         {
             _kernel = kernel;

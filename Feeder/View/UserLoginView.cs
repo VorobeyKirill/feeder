@@ -26,7 +26,15 @@ namespace View
             base.Show();
         }
 
-        public string UserName => throw new NotImplementedException();
+        public string UserName;
+
+        string IUserLoginView.UserName
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         public event Action SignIn;
 
@@ -35,6 +43,9 @@ namespace View
 
         }
 
-        
+        private void UserLoginView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Presenter.Forms
+namespace Feeder.Presentation
 {
-    public interface IAdminView : IView
+    interface IUserLoginPresenter
     {
     }
 }

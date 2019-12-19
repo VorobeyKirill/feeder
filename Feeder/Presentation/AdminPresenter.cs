@@ -1,23 +1,32 @@
-﻿using Model.Service;
+﻿using Feeder.Presentation;
+using Model.Service;
 using Ninject;
 using Presenter.Forms;
 
-namespace Presenter
+namespace Feeder.Presenter.Implementations
 {
-    public class AdminPresenter : AbstractPresenter
+    public class AdminPresenter : IAdminPresenter
     {
-        private readonly IAdminService _service;
-        private readonly IAdminView _view;
+        private IAdminView adminView;
+        private readonly IAdminService _adminService;
+        private readonly IAdminView _adminView;
+        private IKernel _kernel;
+
+        public AdminPresenter(IAdminView adminView)
+        {
+            this.adminView = adminView;
+        }
+
         public AdminPresenter(IKernel kernel, IAdminService adminService, IAdminView view)
         {
             _kernel = kernel;
-            _service = adminService;
-            _view = view;
+            _adminService = adminService;
+            _adminView = view;
         }
 
         public void Run()
         { 
-            _view.Show();
+            _adminView.Show();
         }
     }
 }

@@ -13,6 +13,8 @@ namespace View
 {
     public partial class AdminView : Form, IAdminView
     {
+        public delegate void registernewuser(string name);
+        public event registernewuser registerNewUser;
         private readonly ApplicationContext _context;
         public AdminView(ApplicationContext context)
         {
@@ -46,6 +48,19 @@ namespace View
 
         }
 
-        
+        private void mainPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userNameInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addUser_Click(object sender, EventArgs e)
+        {
+            registerNewUser?.Invoke(userNameInput.Text);
+        }
     }
 }

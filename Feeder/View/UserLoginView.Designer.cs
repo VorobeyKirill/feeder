@@ -79,7 +79,7 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Logged users";
             // 
-            // UserLogin
+            // UserLoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -89,8 +89,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Name = "UserLogin";
+            this.Name = "UserLoginView";
             this.Text = "UserLogin";
+            this.Load += new System.EventHandler(this.UserLoginView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model.Service
+namespace Feeder.Presentation
 {
-    public interface IUserLoginService : IService
+    interface IChooseRolePresenter
     {
     }
 }
