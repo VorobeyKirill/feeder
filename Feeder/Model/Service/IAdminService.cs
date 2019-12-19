@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace Model.Service
 {
     public interface IAdminService : IService
     {
+        void RegisterUser(User user);
     }
 }

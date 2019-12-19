@@ -41,5 +41,10 @@ namespace View
         {
             ChooseAdmin?.Invoke();
         }
+
+        private void ChooseRoleView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

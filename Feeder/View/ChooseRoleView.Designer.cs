@@ -74,6 +74,7 @@ namespace View
             this.Controls.Add(this.SelectAdmin);
             this.Name = "ChooseRoleView";
             this.Text = "ChooseRole";
+            this.Load += new System.EventHandler(this.ChooseRoleView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
