@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.feederName = new System.Windows.Forms.Label();
+            this.feederNameInput = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -39,14 +41,23 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.feederNameInput = new System.Windows.Forms.TextBox();
-            this.feederName = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tagFeeder = new System.Windows.Forms.TextBox();
+            this.addFeederTag = new System.Windows.Forms.Button();
+            this.deleteFeeder = new System.Windows.Forms.Button();
+            this.removeTag = new System.Windows.Forms.Button();
+            this.feedFeeder = new System.Windows.Forms.Button();
+            this.selectFeeder = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -61,6 +72,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.feederName);
             this.tabPage1.Controls.Add(this.feederNameInput);
             this.tabPage1.Controls.Add(this.dataGridView1);
@@ -74,12 +86,29 @@
             this.tabPage1.Text = "Feeders";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // feederName
+            // 
+            this.feederName.AutoSize = true;
+            this.feederName.Location = new System.Drawing.Point(365, 47);
+            this.feederName.Name = "feederName";
+            this.feederName.Size = new System.Drawing.Size(76, 13);
+            this.feederName.TabIndex = 4;
+            this.feederName.Text = "Feeder\'s name";
+            this.feederName.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // feederNameInput
+            // 
+            this.feederNameInput.Location = new System.Drawing.Point(346, 63);
+            this.feederNameInput.Name = "feederNameInput";
+            this.feederNameInput.Size = new System.Drawing.Size(108, 20);
+            this.feederNameInput.TabIndex = 3;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(248, 153);
+            this.dataGridView1.Location = new System.Drawing.Point(45, 126);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(272, 181);
+            this.dataGridView1.Size = new System.Drawing.Size(272, 191);
             this.dataGridView1.TabIndex = 2;
             // 
             // button2
@@ -102,12 +131,15 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.comboBox2);
             this.tabPage2.Controls.Add(this.comboBox1);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.checkedListBox1);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.dateTimePicker1);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -162,14 +194,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(280, 96);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(211, 20);
-            this.dateTimePicker1.TabIndex = 1;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -181,30 +205,113 @@
             this.label1.Text = "Set timetable for feeders";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // feederNameInput
+            // groupBox1
             // 
-            this.feederNameInput.Location = new System.Drawing.Point(346, 63);
-            this.feederNameInput.Name = "feederNameInput";
-            this.feederNameInput.Size = new System.Drawing.Size(108, 20);
-            this.feederNameInput.TabIndex = 3;
+            this.groupBox1.Controls.Add(this.selectFeeder);
+            this.groupBox1.Controls.Add(this.feedFeeder);
+            this.groupBox1.Controls.Add(this.removeTag);
+            this.groupBox1.Controls.Add(this.deleteFeeder);
+            this.groupBox1.Controls.Add(this.addFeederTag);
+            this.groupBox1.Controls.Add(this.tagFeeder);
+            this.groupBox1.Location = new System.Drawing.Point(346, 126);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(396, 191);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
             // 
-            // feederName
+            // tagFeeder
             // 
-            this.feederName.AutoSize = true;
-            this.feederName.Location = new System.Drawing.Point(365, 47);
-            this.feederName.Name = "feederName";
-            this.feederName.Size = new System.Drawing.Size(76, 13);
-            this.feederName.TabIndex = 4;
-            this.feederName.Text = "Feeder\'s name";
-            this.feederName.Click += new System.EventHandler(this.label2_Click);
+            this.tagFeeder.Location = new System.Drawing.Point(164, 20);
+            this.tagFeeder.Name = "tagFeeder";
+            this.tagFeeder.Size = new System.Drawing.Size(59, 20);
+            this.tagFeeder.TabIndex = 1;
             // 
-            // User
+            // addFeederTag
+            // 
+            this.addFeederTag.Location = new System.Drawing.Point(241, 20);
+            this.addFeederTag.Name = "addFeederTag";
+            this.addFeederTag.Size = new System.Drawing.Size(72, 21);
+            this.addFeederTag.TabIndex = 2;
+            this.addFeederTag.Text = "Tag";
+            this.addFeederTag.UseVisualStyleBackColor = true;
+            // 
+            // deleteFeeder
+            // 
+            this.deleteFeeder.Location = new System.Drawing.Point(319, 62);
+            this.deleteFeeder.Name = "deleteFeeder";
+            this.deleteFeeder.Size = new System.Drawing.Size(71, 21);
+            this.deleteFeeder.TabIndex = 3;
+            this.deleteFeeder.Text = "Delete";
+            this.deleteFeeder.UseVisualStyleBackColor = true;
+            // 
+            // removeTag
+            // 
+            this.removeTag.Location = new System.Drawing.Point(319, 20);
+            this.removeTag.Name = "removeTag";
+            this.removeTag.Size = new System.Drawing.Size(71, 21);
+            this.removeTag.TabIndex = 4;
+            this.removeTag.Text = "Untag";
+            this.removeTag.UseVisualStyleBackColor = true;
+            this.removeTag.Click += new System.EventHandler(this.removeTag_Click);
+            // 
+            // feedFeeder
+            // 
+            this.feedFeeder.Location = new System.Drawing.Point(241, 60);
+            this.feedFeeder.Name = "feedFeeder";
+            this.feedFeeder.Size = new System.Drawing.Size(72, 23);
+            this.feedFeeder.TabIndex = 5;
+            this.feedFeeder.Text = "Feed";
+            this.feedFeeder.UseVisualStyleBackColor = true;
+            // 
+            // selectFeeder
+            // 
+            this.selectFeeder.FormattingEnabled = true;
+            this.selectFeeder.Location = new System.Drawing.Point(6, 19);
+            this.selectFeeder.Name = "selectFeeder";
+            this.selectFeeder.Size = new System.Drawing.Size(152, 21);
+            this.selectFeeder.TabIndex = 6;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(225, 93);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(117, 21);
+            this.comboBox2.TabIndex = 7;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(405, 94);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(34, 20);
+            this.textBox1.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(366, 97);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "every";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(445, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "hours";
+            // 
+            // UserView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
-            this.Name = "User";
+            this.Name = "UserView";
             this.Text = "User";
             this.Load += new System.EventHandler(this.User_Load);
             this.tabControl1.ResumeLayout(false);
@@ -213,6 +320,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -226,7 +335,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -234,5 +342,16 @@
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label feederName;
         private System.Windows.Forms.TextBox feederNameInput;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button removeTag;
+        private System.Windows.Forms.Button deleteFeeder;
+        private System.Windows.Forms.Button addFeederTag;
+        private System.Windows.Forms.TextBox tagFeeder;
+        private System.Windows.Forms.ComboBox selectFeeder;
+        private System.Windows.Forms.Button feedFeeder;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

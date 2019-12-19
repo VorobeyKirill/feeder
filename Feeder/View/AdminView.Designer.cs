@@ -40,18 +40,24 @@
             this.logPage = new System.Windows.Forms.TabPage();
             this.logs = new System.Windows.Forms.DataGridView();
             this.exportLog = new System.Windows.Forms.Button();
+            this.requestPage = new System.Windows.Forms.TabPage();
+            this.requestsList = new System.Windows.Forms.CheckedListBox();
+            this.acceptRequest = new System.Windows.Forms.Button();
+            this.rejectRequest = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.mainPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userList)).BeginInit();
             this.logPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logs)).BeginInit();
+            this.requestPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.mainPage);
             this.tabControl1.Controls.Add(this.logPage);
+            this.tabControl1.Controls.Add(this.requestPage);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -169,6 +175,47 @@
             this.exportLog.UseVisualStyleBackColor = true;
             this.exportLog.Click += new System.EventHandler(this.button4_Click);
             // 
+            // requestPage
+            // 
+            this.requestPage.Controls.Add(this.rejectRequest);
+            this.requestPage.Controls.Add(this.acceptRequest);
+            this.requestPage.Controls.Add(this.requestsList);
+            this.requestPage.Location = new System.Drawing.Point(4, 22);
+            this.requestPage.Name = "requestPage";
+            this.requestPage.Padding = new System.Windows.Forms.Padding(3);
+            this.requestPage.Size = new System.Drawing.Size(502, 316);
+            this.requestPage.TabIndex = 2;
+            this.requestPage.Text = "Requests";
+            this.requestPage.UseVisualStyleBackColor = true;
+            // 
+            // requestsList
+            // 
+            this.requestsList.FormattingEnabled = true;
+            this.requestsList.Location = new System.Drawing.Point(8, 6);
+            this.requestsList.Name = "requestsList";
+            this.requestsList.Size = new System.Drawing.Size(394, 304);
+            this.requestsList.TabIndex = 0;
+            // 
+            // acceptRequest
+            // 
+            this.acceptRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.acceptRequest.Location = new System.Drawing.Point(408, 17);
+            this.acceptRequest.Name = "acceptRequest";
+            this.acceptRequest.Size = new System.Drawing.Size(86, 34);
+            this.acceptRequest.TabIndex = 1;
+            this.acceptRequest.Text = "Accept";
+            this.acceptRequest.UseVisualStyleBackColor = true;
+            // 
+            // rejectRequest
+            // 
+            this.rejectRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rejectRequest.Location = new System.Drawing.Point(408, 75);
+            this.rejectRequest.Name = "rejectRequest";
+            this.rejectRequest.Size = new System.Drawing.Size(86, 34);
+            this.rejectRequest.TabIndex = 2;
+            this.rejectRequest.Text = "Reject";
+            this.rejectRequest.UseVisualStyleBackColor = true;
+            // 
             // AdminView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,6 +231,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.userList)).EndInit();
             this.logPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logs)).EndInit();
+            this.requestPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -202,5 +250,9 @@
         private System.Windows.Forms.TextBox feederNameInput;
         private System.Windows.Forms.TextBox userNameInput;
         private System.Windows.Forms.ComboBox userSelect;
+        private System.Windows.Forms.TabPage requestPage;
+        private System.Windows.Forms.Button rejectRequest;
+        private System.Windows.Forms.Button acceptRequest;
+        private System.Windows.Forms.CheckedListBox requestsList;
     }
 }
