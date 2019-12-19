@@ -29,13 +29,11 @@ namespace Feeder.Presenter.Implementations
         private void ShowAdminView()
         {
             _kernel.Get<AdminPresenter>().Run();
-            _view.Close();
         }
 
         private void ShowUserView()
         {
             _kernel.Get<UserLoginPresenter>().Run();
-            _view.Close();
         }
         public new void Run()
         {

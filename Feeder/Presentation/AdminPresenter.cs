@@ -25,8 +25,10 @@ namespace Feeder.Presenter.Implementations
         }
 
         public void Run()
-        { 
+        {
+            
             _adminView.Show();
+            
         }
     }
 }

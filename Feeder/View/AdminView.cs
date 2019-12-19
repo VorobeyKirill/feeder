@@ -24,8 +24,12 @@ namespace View
 
         public void Show()
         {
-            _context.MainForm = this;
-            base.Show();
+            //_context.MainForm = this;
+            if(!Application.OpenForms.Cast<Form>().Any(f => f.Name == base.Name))
+            {
+                base.Show();
+
+            }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
