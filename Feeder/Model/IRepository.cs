@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,8 @@ namespace Model
     {
 
         int Add(T obj);
-        T Find(int id);
+        T Find(string name);
+        bool CheckForUser(User user);
         IEnumerable<T> GetAll();
 
     }

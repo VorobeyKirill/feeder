@@ -27,9 +27,21 @@ namespace Feeder.Repositories
             return obj.id;
         }
 
-        public User Find(int id)
+        public User Find(string name)
         {
-            return list.Find(c => c.id == id);
+            return list.Find(c => c.name == name);
+        }
+
+        public bool CheckForUser(User user)
+        {
+            foreach (var man in list)
+            {
+                if (man.name == user.name)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public IEnumerable<User> GetAll()

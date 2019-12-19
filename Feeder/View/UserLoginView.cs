@@ -15,7 +15,8 @@ namespace View
     {
         private readonly ApplicationContext _context;
         public string UserName;
-        public event Action Login;
+        public delegate void login(string name);
+        public event login Login;
 
         public UserLoginView(ApplicationContext context)
         {
@@ -50,7 +51,7 @@ namespace View
 
         private void SignIn_Click(object sender, EventArgs e)
         {
-            Login?.Invoke();
+            Login?.Invoke(textBox1.Text);
         }
     }
 }

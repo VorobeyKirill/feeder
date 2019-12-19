@@ -1,4 +1,5 @@
-﻿using Model.Service;
+﻿using Model.Entity;
+using Model.Service;
 using Ninject;
 using Presenter.Forms;
 using System;
@@ -19,14 +20,20 @@ namespace Feeder.Presenter.Implementations
             _service = service;
             _view = view;
 
-            (_view as IUserLoginView).Login += () => SignIn();
+            (_view as IUserLoginView).Login += SignIn;
         }
 
-        private void SignIn()
+        private void SignIn(string name)
         {
-            // need user auth
-            _kernel.Get<UserPresenter>().Run();
-            _view.Close();
+            var user = new User();
+            user.name = name;
+            bool test = _service.CheckForUser(user);
+            if (_service.CheckForUser(user))
+            {
+               _kernel.Get<UserPresenter>().Run();
+               _view.Close();
+            }
+         
 
         }
 
