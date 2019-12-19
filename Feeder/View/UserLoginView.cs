@@ -14,6 +14,9 @@ namespace View
     public partial class UserLoginView : Form, IUserLoginView
     {
         private readonly ApplicationContext _context;
+        public string UserName;
+        public event Action Login;
+
         public UserLoginView(ApplicationContext context)
         {
             _context = context;
@@ -22,11 +25,10 @@ namespace View
 
         public void Show()
         {
-            _context.MainForm = this;
+            //_context.MainForm = this;
             base.Show();
         }
 
-        public string UserName;
 
         string IUserLoginView.UserName
         {
@@ -36,8 +38,6 @@ namespace View
             }
         }
 
-        public event Action SignIn;
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -46,6 +46,11 @@ namespace View
         private void UserLoginView_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void SignIn_Click(object sender, EventArgs e)
+        {
+            Login?.Invoke();
         }
     }
 }

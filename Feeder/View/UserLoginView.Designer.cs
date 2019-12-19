@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.SignIn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -36,14 +36,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // SignIn
             // 
-            this.button1.Location = new System.Drawing.Point(189, 60);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Sign In";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SignIn.Location = new System.Drawing.Point(189, 60);
+            this.SignIn.Name = "SignIn";
+            this.SignIn.Size = new System.Drawing.Size(75, 23);
+            this.SignIn.TabIndex = 0;
+            this.SignIn.Text = "Sign In";
+            this.SignIn.UseVisualStyleBackColor = true;
+            this.SignIn.Click += new System.EventHandler(this.SignIn_Click);
             // 
             // textBox1
             // 
@@ -88,7 +89,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SignIn);
             this.Name = "UserLoginView";
             this.Text = "UserLogin";
             this.Load += new System.EventHandler(this.UserLoginView_Load);
@@ -100,7 +101,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SignIn;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;

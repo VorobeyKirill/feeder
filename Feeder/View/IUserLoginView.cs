@@ -9,6 +9,6 @@ namespace Presenter.Forms
     public interface IUserLoginView : IView
     {
         string UserName { get; }
-        event Action SignIn;
+        event Action Login;
     }
 }

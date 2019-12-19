@@ -19,13 +19,14 @@ namespace Feeder.Presenter.Implementations
             _service = service;
             _view = view;
 
-            (_view as IUserLoginView).SignIn += () => SignIn();
+            (_view as IUserLoginView).Login += () => SignIn();
         }
 
         private void SignIn()
         {
             // need user auth
             _kernel.Get<UserPresenter>().Run();
+            _view.Close();
 
         }
 
