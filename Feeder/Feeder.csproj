@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6B336F5A-E18E-4D78-A7DA-82174647FDF6}</ProjectGuid>
+    <ProjectGuid>{D5A7F4C7-858B-4B1F-A2CA-DE18613C19DC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>View</RootNamespace>
-    <AssemblyName>View</AssemblyName>
+    <RootNamespace>Feeder</RootNamespace>
+    <AssemblyName>Feeder</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,11 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ninject, Version=3.3.3.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ninject.3.3.3\lib\net45\Ninject.dll</HintPath>
-    </Reference>
-    <Reference Include="Ninject.Web.Common, Version=3.3.1.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ninject.Web.Common.3.3.1\lib\net45\Ninject.Web.Common.dll</HintPath>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,38 +49,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminView.Designer.cs">
-      <DependentUpon>AdminView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChooseRoleView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChooseRoleView.Designer.cs">
-      <DependentUpon>ChooseRoleView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserView.Designer.cs">
-      <DependentUpon>UserView.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Model\Entity\Admin.cs" />
+    <Compile Include="Model\Entity\BaseEntity.cs" />
+    <Compile Include="Model\Entity\Feeder.cs" />
+    <Compile Include="Model\Entity\User.cs" />
+    <Compile Include="Model\IRepository.cs" />
+    <Compile Include="Model\IService.cs" />
+    <Compile Include="Model\ITimer.cs" />
+    <Compile Include="Model\Service\AdminService.cs" />
+    <Compile Include="Model\Service\ChooseRoleService.cs" />
+    <Compile Include="Model\Service\IAdminService.cs" />
+    <Compile Include="Model\Service\IChooseRoleService.cs" />
+    <Compile Include="Model\Service\IUserLoginService.cs" />
+    <Compile Include="Model\Service\IUserService.cs" />
+    <Compile Include="Model\Service\UserLoginService.cs" />
+    <Compile Include="Model\Service\UserService.cs" />
+    <Compile Include="Presentation\AbstractPresenter.cs" />
+    <Compile Include="Presentation\AdminPresenter.cs" />
+    <Compile Include="Presentation\ChooseRolePresenter.cs" />
+    <Compile Include="Presentation\Forms\IAdminView.cs" />
+    <Compile Include="Presentation\Forms\IChooseRoleView.cs" />
+    <Compile Include="Presentation\Forms\IUserLoginView.cs" />
+    <Compile Include="Presentation\Forms\IUserView.cs" />
+    <Compile Include="Presentation\Forms\IView.cs" />
+    <Compile Include="Presentation\UserLoginPresenter.cs" />
+    <Compile Include="Presentation\UserPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserLoginView.cs">
+    <Compile Include="View\AdminView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserLoginView.Designer.cs">
+    <Compile Include="View\AdminView.Designer.cs">
+      <DependentUpon>AdminView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChooseRoleView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChooseRoleView.Designer.cs">
+      <DependentUpon>ChooseRoleView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserLoginView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserLoginView.Designer.cs">
       <DependentUpon>UserLoginView.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminView.resx">
-      <DependentUpon>AdminView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChooseRoleView.resx">
-      <DependentUpon>ChooseRoleView.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="View\UserView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserView.Designer.cs">
+      <DependentUpon>UserView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -93,11 +109,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserView.resx">
-      <DependentUpon>UserView.cs</DependentUpon>
+    <EmbeddedResource Include="View\AdminView.resx">
+      <DependentUpon>AdminView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserLoginView.resx">
+    <EmbeddedResource Include="View\ChooseRoleView.resx">
+      <DependentUpon>ChooseRoleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserLoginView.resx">
       <DependentUpon>UserLoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserView.resx">
+      <DependentUpon>UserView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

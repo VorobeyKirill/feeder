@@ -13,13 +13,16 @@ namespace View
 {
     public partial class AdminView : Form, IAdminView
     {
-        public AdminView()
+        private readonly ApplicationContext _context;
+        public AdminView(ApplicationContext context)
         {
+            _context = context;
             InitializeComponent();
         }
 
-        public new void Show()
+        public void Show()
         {
+            _context.MainForm = this;
             base.Show();
         }
 

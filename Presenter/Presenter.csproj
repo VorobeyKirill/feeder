@@ -88,11 +88,5 @@
     <Compile Include="UserLoginPresenter.cs" />
     <Compile Include="UserPresenter.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{d1455fc6-0c44-43db-b882-ba55ffedb4b6}</Project>
-      <Name>Model</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

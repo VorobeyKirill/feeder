@@ -18,5 +18,10 @@ namespace Presenter
             _service = userService;
             _view = view;
         }
+
+        public void Run()
+        { 
+            _view.Show();
+        }
     }
 }

@@ -34,6 +34,7 @@ namespace Presenter
         }
         public new void Run()
         {
+
             _view.Show();
         }
     }
