@@ -27,14 +27,6 @@ namespace Feeder.Repositories
             return obj.id;
         }
 
-        public void Update(User obj)
-        {
-        }
-
-        public void Remove(int id)
-        {
-        }
-
         public User Find(int id)
         {
             return list.Find(c => c.id == id);
