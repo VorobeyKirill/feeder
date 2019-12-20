@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model.Entity
+namespace Feeder.Model.Repository
 {
-    public class User : BaseEntity
+    class FeederRepository
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace Feeder.Presenter.Implementations
         private void SignIn(string name)
         {
             var user = new User();
-            user.name = name;
+            user.Name = name;
             bool test = _service.CheckForUser(user);
             if (_service.CheckForUser(user))
             {

@@ -23,7 +23,7 @@ namespace Feeder.Presenter.Implementations
         public void RegisterNewUser(string name)
         {
             var user = new User();
-            user.name = name;
+            user.Name = name;
             _userService.RegisterUser(user);
         }
 

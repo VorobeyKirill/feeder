@@ -11,8 +11,8 @@ namespace Model
     {
 
         int Add(T obj);
-        T Find(string name);
-        bool CheckForUser(User user);
+        T Find(int id);
+        bool CheckForOverlaps(T obj);
         IEnumerable<T> GetAll();
 
     }

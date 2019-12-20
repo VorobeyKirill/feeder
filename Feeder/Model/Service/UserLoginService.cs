@@ -17,7 +17,7 @@ namespace Model.Service
 
         public bool CheckForUser(User user)
         {
-            return usersRepository.CheckForUser(user);
+            return usersRepository.CheckForOverlaps(user);
         }
     }
 }

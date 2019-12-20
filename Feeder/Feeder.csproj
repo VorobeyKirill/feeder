@@ -58,6 +58,8 @@
     <Compile Include="Model\IRepository.cs" />
     <Compile Include="Model\IService.cs" />
     <Compile Include="Model\ITimer.cs" />
+    <Compile Include="Model\Repository\FeederRepository.cs" />
+    <Compile Include="Model\Repository\UserRepository.cs" />
     <Compile Include="Model\Service\AdminService.cs" />
     <Compile Include="Model\Service\ChooseRoleService.cs" />
     <Compile Include="Model\Service\IAdminService.cs" />

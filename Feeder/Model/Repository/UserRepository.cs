@@ -6,35 +6,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Feeder.Repositories
+namespace Feeder.Model.Repository
 {
-    class UsersRepository : IRepository<User>
+    class UserRepository : IRepository<User>
     {
-        private static List<User> list = new List<User>();
-        private static int currentUserId = 0;
+        private static List<User> _data = new List<User>();
+        private static int _end_index = 0;
         public int Add(User obj)
         {
-            foreach (var user in list)
+            foreach (var user in _data)
             {
                 if (user.Name == obj.Name)
                 {
                     throw new ArgumentException("User is already exist, please choose another name!");
                 }
             }
-            obj.id = currentUserId;
-            currentUserId++;
-            list.Add(obj);
-            return obj.id;
-        }
-
-        public User Find(string name)
-        {
-            return list.Find(c => c.Name == name);
+            obj.Id = _end_index;
+            _end_index++;
+            _data.Add(obj);
+            return obj.Id;
         }
 
         public bool CheckForOverlaps(User user)
         {
-            foreach (var man in list)
+            foreach (var man in _data)
             {
                 if (man.Name == user.Name)
                 {
@@ -44,14 +39,14 @@ namespace Feeder.Repositories
             return false;
         }
 
-        public IEnumerable<User> GetAll()
-        {
-            return list;
-        }
-
         public User Find(int id)
         {
-            throw new NotImplementedException();
+            return _data.Find(c => c.Id == id);
+        }
+
+        public IEnumerable<User> GetAll()
+        {
+            return _data;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Feeder.Presentation;
+﻿using Feeder.Model.Repository;
+using Feeder.Presentation;
 using Feeder.Presenter.Implementations;
 using Feeder.Repositories;
 using Model;
@@ -39,7 +40,7 @@ namespace Feeder
             kernel.Bind<IUserLoginService>().To<UserLoginService>();
             kernel.Bind<IUserService>().To<UserService>();
             kernel.Bind<AdminPresenter>().ToSelf();
-            kernel.Bind<IRepository<User>>().To<UsersRepository>();
+            kernel.Bind<IRepository<User>>().To<UserRepository>();
 
             kernel.Get<ChooseRolePresenter>().Run();
             Application.Run(kernel.Get<ApplicationContext>());
