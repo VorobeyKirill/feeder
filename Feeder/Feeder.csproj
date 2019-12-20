@@ -53,7 +53,7 @@
   <ItemGroup>
     <Compile Include="Model\Entity\Admin.cs" />
     <Compile Include="Model\Entity\BaseEntity.cs" />
-    <Compile Include="Model\Entity\Feeder.cs" />
+    <Compile Include="Model\Entity\FeederEntity.cs" />
     <Compile Include="Model\Entity\User.cs" />
     <Compile Include="Model\IRepository.cs" />
     <Compile Include="Model\IService.cs" />
@@ -76,7 +76,6 @@
     <Compile Include="Presentation\IChooseRolePresenter.cs" />
     <Compile Include="Presentation\IUserLoginPresenter.cs" />
     <Compile Include="Presentation\IUserPresenter.cs" />
-    <Compile Include="Repositories\UsersRepository.cs" />
     <Compile Include="View\IAdminView.cs" />
     <Compile Include="View\IChooseRoleView.cs" />
     <Compile Include="View\IUserLoginView.cs" />

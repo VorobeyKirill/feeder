@@ -66,5 +66,15 @@ namespace View
         {
             registerNewUser?.Invoke(userNameInput.Text);
         }
+
+        private void userSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void requestsList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

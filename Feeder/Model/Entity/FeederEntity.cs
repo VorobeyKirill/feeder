@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Model.Entity
 {
-    public class Feeder : BaseEntity
+    public class FeederEntity : BaseEntity
     {
         public int Id { get; set;  }
         public int UserId { get; set; }
         public string Name { get; set; }
+        public string Type { get; set; }
         public int FoodAmount { get; set; }
 
     }

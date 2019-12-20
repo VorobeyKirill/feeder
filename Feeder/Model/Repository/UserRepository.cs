@@ -39,9 +39,9 @@ namespace Feeder.Model.Repository
             return false;
         }
 
-        public User Find(int id)
+        public User Find(string Name)
         {
-            return _data.Find(c => c.Id == id);
+            return _data.Find(c => c.Name == Name);
         }
 
         public IEnumerable<User> GetAll()

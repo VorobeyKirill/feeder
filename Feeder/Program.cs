@@ -1,17 +1,11 @@
 ﻿using Feeder.Model.Repository;
-using Feeder.Presentation;
 using Feeder.Presenter.Implementations;
-using Feeder.Repositories;
 using Model;
 using Model.Entity;
 using Model.Service;
 using Ninject;
-using Presenter;
 using Presenter.Forms;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using View;
 
@@ -41,6 +35,7 @@ namespace Feeder
             kernel.Bind<IUserService>().To<UserService>();
             kernel.Bind<AdminPresenter>().ToSelf();
             kernel.Bind<IRepository<User>>().To<UserRepository>();
+            kernel.Bind<IRepository<FeederEntity>>().To<FeederRepository>();
 
             kernel.Get<ChooseRolePresenter>().Run();
             Application.Run(kernel.Get<ApplicationContext>());

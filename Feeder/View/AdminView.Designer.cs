@@ -41,9 +41,9 @@
             this.logs = new System.Windows.Forms.DataGridView();
             this.exportLog = new System.Windows.Forms.Button();
             this.requestPage = new System.Windows.Forms.TabPage();
-            this.requestsList = new System.Windows.Forms.CheckedListBox();
-            this.acceptRequest = new System.Windows.Forms.Button();
             this.rejectRequest = new System.Windows.Forms.Button();
+            this.acceptRequest = new System.Windows.Forms.Button();
+            this.requestsList = new System.Windows.Forms.CheckedListBox();
             this.tabControl1.SuspendLayout();
             this.mainPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -90,6 +90,7 @@
             this.userSelect.Name = "userSelect";
             this.userSelect.Size = new System.Drawing.Size(121, 21);
             this.userSelect.TabIndex = 10;
+            this.userSelect.SelectedIndexChanged += new System.EventHandler(this.userSelect_SelectedIndexChanged);
             // 
             // feederNameInput
             // 
@@ -188,13 +189,15 @@
             this.requestPage.Text = "Requests";
             this.requestPage.UseVisualStyleBackColor = true;
             // 
-            // requestsList
+            // rejectRequest
             // 
-            this.requestsList.FormattingEnabled = true;
-            this.requestsList.Location = new System.Drawing.Point(8, 6);
-            this.requestsList.Name = "requestsList";
-            this.requestsList.Size = new System.Drawing.Size(394, 304);
-            this.requestsList.TabIndex = 0;
+            this.rejectRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rejectRequest.Location = new System.Drawing.Point(408, 75);
+            this.rejectRequest.Name = "rejectRequest";
+            this.rejectRequest.Size = new System.Drawing.Size(86, 34);
+            this.rejectRequest.TabIndex = 2;
+            this.rejectRequest.Text = "Reject";
+            this.rejectRequest.UseVisualStyleBackColor = true;
             // 
             // acceptRequest
             // 
@@ -206,15 +209,14 @@
             this.acceptRequest.Text = "Accept";
             this.acceptRequest.UseVisualStyleBackColor = true;
             // 
-            // rejectRequest
+            // requestsList
             // 
-            this.rejectRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rejectRequest.Location = new System.Drawing.Point(408, 75);
-            this.rejectRequest.Name = "rejectRequest";
-            this.rejectRequest.Size = new System.Drawing.Size(86, 34);
-            this.rejectRequest.TabIndex = 2;
-            this.rejectRequest.Text = "Reject";
-            this.rejectRequest.UseVisualStyleBackColor = true;
+            this.requestsList.FormattingEnabled = true;
+            this.requestsList.Location = new System.Drawing.Point(8, 6);
+            this.requestsList.Name = "requestsList";
+            this.requestsList.Size = new System.Drawing.Size(394, 304);
+            this.requestsList.TabIndex = 0;
+            this.requestsList.SelectedIndexChanged += new System.EventHandler(this.requestsList_SelectedIndexChanged);
             // 
             // AdminView
             // 
