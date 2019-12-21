@@ -10,6 +10,7 @@ namespace Model.Entity
     {
         public int Id { get; set;  }
         public string Name { get; set; }
+        public string UserName { get; set; }
         public string Type { get; set; }
         public int Interval { get; set; }
         public int FoodAmount { get; set; }
@@ -18,9 +19,10 @@ namespace Model.Entity
         {
         }
 
-        public FeederEntity(string name, string type)
+        public FeederEntity(string name, string userName, string type)
         {
             Name = name;
+            userName = userName;
             Type = type;
         }
     }

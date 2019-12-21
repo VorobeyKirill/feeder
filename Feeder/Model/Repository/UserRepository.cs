@@ -12,6 +12,17 @@ namespace Feeder.Model.Repository
     {
         private static List<User> _data = new List<User>();
         private static int _end_index = 0;
+        public static User currentUser { get; set; }
+
+        public User GetCurrentUser()
+        {
+            return currentUser;
+        }
+        public void AddFeeder(FeederEntity feeder)
+        {
+            User currentUser = GetCurrentUser();
+            currentUser.Feeders.Add(feeder);
+        }
         public int Add(User obj)
         {
             foreach (var user in _data)

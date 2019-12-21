@@ -40,7 +40,6 @@
             this.tagFeeder = new System.Windows.Forms.TextBox();
             this.feederName = new System.Windows.Forms.Label();
             this.feederNameInput = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,10 +51,10 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.feederList = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,11 +70,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.feederList);
             this.tabPage1.Controls.Add(this.sendRequest);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.feederName);
             this.tabPage1.Controls.Add(this.feederNameInput);
-            this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -106,7 +105,6 @@
             this.groupBox1.Size = new System.Drawing.Size(396, 191);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // selectFeeder
             // 
@@ -178,14 +176,6 @@
             this.feederNameInput.Size = new System.Drawing.Size(217, 20);
             this.feederNameInput.TabIndex = 3;
             this.feederNameInput.TextChanged += new System.EventHandler(this.feederNameInput_TextChanged);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 29);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(272, 288);
-            this.dataGridView1.TabIndex = 2;
             // 
             // tabPage2
             // 
@@ -296,6 +286,15 @@
             this.label1.Text = "Set timetable for feeders";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
+            // feederList
+            // 
+            this.feederList.FormattingEnabled = true;
+            this.feederList.Location = new System.Drawing.Point(60, 96);
+            this.feederList.Name = "feederList";
+            this.feederList.Size = new System.Drawing.Size(163, 199);
+            this.feederList.TabIndex = 7;
+            this.feederList.SelectedIndexChanged += new System.EventHandler(this.feederList_SelectedIndexChanged);
+            // 
             // UserView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,7 +309,6 @@
             this.tabPage1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
@@ -322,7 +320,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
@@ -343,5 +340,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button sendRequest;
+        private System.Windows.Forms.ListBox feederList;
     }
 }

@@ -36,7 +36,7 @@ namespace Feeder.Presenter.Implementations
 
         private void AddFeeder(string name, string userName, string type)
         {
-            var feeder = new FeederEntity(name, type);
+            var feeder = new FeederEntity(name, userName, type);
             _feederService.AddFeeder(feeder);
         }
 

@@ -98,10 +98,16 @@ namespace View
             foreach (var item in feeders)
             {
                 selectFeeder.Items.Add(item.Name);
+                feederList.Items.Add(item.Name);
             }
         }
 
         private void selectFeeder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void feederList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
