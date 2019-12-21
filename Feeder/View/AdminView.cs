@@ -13,10 +13,6 @@ namespace View
 {
     public partial class AdminView : Form, IAdminView
     {
-        public string UserSelect { get => userSelect.Text; set => throw new NotImplementedException(); }
-        public string FeederName { get => feederNameInput.Text; set => throw new NotImplementedException(); }
-
-
 
         public string FeederType;
         public delegate void registernewuser(string name);

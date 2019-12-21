@@ -9,16 +9,18 @@ namespace Model.Service
 {
     public class UserService : IUserService
     {
-        /*private readonly IRepository<User> usersRepository;
-        public UserService(IRepository<User> repository)
-        {
-            usersRepository = repository;
-        }
+        public User CurrentUser { get; set; }
 
-        public void RegisterUser(User user)
-        {
-            usersRepository.Add(user);
-        }*/
+        /*private readonly IRepository<User> usersRepository;
+public UserService(IRepository<User> repository)
+{
+   usersRepository = repository;
+}
+
+public void RegisterUser(User user)
+{
+   usersRepository.Add(user);
+}*/
 
         private readonly IRepository<User> _repository;
         public UserService(IRepository<User> repository)
@@ -28,6 +30,7 @@ namespace Model.Service
         public void RegisterUser(User user)
         {
             _repository.Add(user);
+            CurrentUser = user;
         }
     }
 }

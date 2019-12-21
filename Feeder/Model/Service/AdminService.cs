@@ -71,8 +71,7 @@ namespace Model.Service
             SelectedFeeder =
                 SelectedUser.Feeders
                 .Where(u => u.Name == feederName).FirstOrDefault();
+
         }
-
-
     }
 }

@@ -10,6 +10,7 @@ namespace Feeder.Model.Service
 {
     public interface IFeederService : IService
     {
+        event Action UpdateFeeders;
         void AddFeeder(FeederEntity feeder);
     }
 }

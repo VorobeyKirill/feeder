@@ -9,6 +9,8 @@ namespace Model.Service
 {
     public interface IUserService : IService
     {
+        User CurrentUser { get; set; }
+
         void RegisterUser(User user);
     }
 }

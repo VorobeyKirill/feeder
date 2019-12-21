@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.sendRequest = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.selectFeeder = new System.Windows.Forms.ComboBox();
             this.feedFeeder = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.sendRequest = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -84,6 +84,15 @@
             this.tabPage1.Text = "Feeders";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // sendRequest
+            // 
+            this.sendRequest.Location = new System.Drawing.Point(612, 61);
+            this.sendRequest.Name = "sendRequest";
+            this.sendRequest.Size = new System.Drawing.Size(75, 23);
+            this.sendRequest.TabIndex = 6;
+            this.sendRequest.Text = "Send";
+            this.sendRequest.UseVisualStyleBackColor = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.selectFeeder);
@@ -106,6 +115,7 @@
             this.selectFeeder.Name = "selectFeeder";
             this.selectFeeder.Size = new System.Drawing.Size(152, 21);
             this.selectFeeder.TabIndex = 6;
+            this.selectFeeder.SelectedIndexChanged += new System.EventHandler(this.selectFeeder_SelectedIndexChanged);
             // 
             // feedFeeder
             // 
@@ -285,15 +295,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Set timetable for feeders";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // sendRequest
-            // 
-            this.sendRequest.Location = new System.Drawing.Point(612, 61);
-            this.sendRequest.Name = "sendRequest";
-            this.sendRequest.Size = new System.Drawing.Size(75, 23);
-            this.sendRequest.TabIndex = 6;
-            this.sendRequest.Text = "Send";
-            this.sendRequest.UseVisualStyleBackColor = true;
             // 
             // UserView
             // 

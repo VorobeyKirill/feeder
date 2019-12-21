@@ -10,7 +10,7 @@ namespace Feeder.Model.Service
 {
     public class FeederService : IFeederService
     {
-
+        public event Action UpdateFeeders;
         private readonly IRepository<FeederEntity> _repository;
         public FeederService(IRepository<FeederEntity> repository)
         {
@@ -19,6 +19,7 @@ namespace Feeder.Model.Service
         public void AddFeeder(FeederEntity feeder)
         {
             _repository.Add(feeder);
+            UpdateFeeders?.Invoke();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Presenter.Forms;
+﻿using Model.Entity;
+using Presenter.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -89,6 +90,20 @@ namespace View
         private void button2_Click(object sender, EventArgs e)
         {
             createFeeder.Invoke("screw", feederNameInput.Text);
+        }
+
+        public void UpdateFeeders(List<FeederEntity> feeders)
+        {
+            selectFeeder.Items.Clear();
+            foreach (var item in feeders)
+            {
+                selectFeeder.Items.Add(item.Name);
+            }
+        }
+
+        private void selectFeeder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
