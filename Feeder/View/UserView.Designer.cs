@@ -40,8 +40,6 @@
             this.feederName = new System.Windows.Forms.Label();
             this.feederNameInput = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +51,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.sendRequest = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -72,12 +71,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.sendRequest);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.feederName);
             this.tabPage1.Controls.Add(this.feederNameInput);
             this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -158,46 +156,26 @@
             this.feederName.AutoSize = true;
             this.feederName.Location = new System.Drawing.Point(365, 47);
             this.feederName.Name = "feederName";
-            this.feederName.Size = new System.Drawing.Size(76, 13);
+            this.feederName.Size = new System.Drawing.Size(70, 13);
             this.feederName.TabIndex = 4;
-            this.feederName.Text = "Feeder\'s name";
+            this.feederName.Text = "Send request";
             this.feederName.Click += new System.EventHandler(this.label2_Click);
             // 
             // feederNameInput
             // 
-            this.feederNameInput.Location = new System.Drawing.Point(346, 63);
+            this.feederNameInput.Location = new System.Drawing.Point(352, 63);
             this.feederNameInput.Name = "feederNameInput";
-            this.feederNameInput.Size = new System.Drawing.Size(108, 20);
+            this.feederNameInput.Size = new System.Drawing.Size(217, 20);
             this.feederNameInput.TabIndex = 3;
             this.feederNameInput.TextChanged += new System.EventHandler(this.feederNameInput_TextChanged);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(45, 126);
+            this.dataGridView1.Location = new System.Drawing.Point(33, 29);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(272, 191);
+            this.dataGridView1.Size = new System.Drawing.Size(272, 288);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(482, 52);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(206, 40);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Create a feeder with screw";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(111, 52);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(206, 40);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Create a feeder with dispenser";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabPage2
             // 
@@ -308,6 +286,15 @@
             this.label1.Text = "Set timetable for feeders";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
+            // sendRequest
+            // 
+            this.sendRequest.Location = new System.Drawing.Point(612, 61);
+            this.sendRequest.Name = "sendRequest";
+            this.sendRequest.Size = new System.Drawing.Size(75, 23);
+            this.sendRequest.TabIndex = 6;
+            this.sendRequest.Text = "Send";
+            this.sendRequest.UseVisualStyleBackColor = true;
+            // 
             // UserView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,8 +321,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;
@@ -356,5 +341,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button sendRequest;
     }
 }

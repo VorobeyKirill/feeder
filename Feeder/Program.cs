@@ -1,4 +1,5 @@
 ﻿using Feeder.Model.Repository;
+using Feeder.Model.Service;
 using Feeder.Presenter.Implementations;
 using Model;
 using Model.Entity;
@@ -31,11 +32,14 @@ namespace Feeder
             kernel.Bind<IUserView>().To<UserView>();
             kernel.Bind<IAdminService>().To<AdminService>();
             kernel.Bind<IChooseRoleService>().To<ChooseRoleService>();
+            kernel.Bind<IFeederService>().To<FeederService>();
             kernel.Bind<IUserLoginService>().To<UserLoginService>();
             kernel.Bind<IUserService>().To<UserService>();
             kernel.Bind<AdminPresenter>().ToSelf();
             kernel.Bind<IRepository<User>>().To<UserRepository>();
             kernel.Bind<IRepository<FeederEntity>>().To<FeederRepository>();
+            kernel.Bind<IRepository<string>>().To<RequestRepository>();
+            kernel.Bind<UserPresenter>().ToSelf(); 
 
             kernel.Get<ChooseRolePresenter>().Run();
             Application.Run(kernel.Get<ApplicationContext>());

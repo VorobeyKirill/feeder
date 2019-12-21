@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Feeder.Model.Repository
 {
-    class UserRepository : IRepository<User>
+    public class UserRepository : IRepository<User>
     {
         private static List<User> _data = new List<User>();
         private static int _end_index = 0;
@@ -47,6 +47,11 @@ namespace Feeder.Model.Repository
         public IEnumerable<User> GetAll()
         {
             return _data;
+        }
+
+        public void Update(User obj)
+        {
+        
         }
     }
 }

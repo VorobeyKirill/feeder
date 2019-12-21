@@ -14,12 +14,9 @@ namespace Feeder.Model.Repository
         private static int _end_index = 0;
         public int Add(FeederEntity obj)
         {
-            foreach (var feeder in _data)
+           if(CheckForOverlaps(obj))
             {
-                if (feeder.Name == obj.Name)
-                {
-                    throw new ArgumentException("Feeder with this name is already exist, please choose another name!");
-                }
+                throw new ArgumentException("Please enter another feeder's name");
             }
             obj.Id = _end_index;
             _end_index++;
@@ -27,9 +24,16 @@ namespace Feeder.Model.Repository
             return obj.Id;
         }
 
-        public bool CheckForOverlaps(FeederEntity user)
+        public bool CheckForOverlaps(FeederEntity obj)
         {
-            return true;
+            foreach (var feeder in _data)
+            {
+                if (feeder.Name == obj.Name && feeder.Type == obj.Type)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public FeederEntity Find(string Name)
@@ -40,6 +44,11 @@ namespace Feeder.Model.Repository
         public IEnumerable<FeederEntity> GetAll()
         {
             return _data;
+        }
+
+        public void Update(FeederEntity obj)
+        {
+
         }
     }
 }

@@ -13,8 +13,16 @@ namespace View
 {
     public partial class AdminView : Form, IAdminView
     {
+        public string UserSelect { get => userSelect.Text; set => throw new NotImplementedException(); }
+        public string FeederName { get => feederNameInput.Text; set => throw new NotImplementedException(); }
+
+
+
+        public string FeederType;
         public delegate void registernewuser(string name);
+        public delegate void clickaddfeeder(string name, string userName, string type);
         public event registernewuser registerNewUser;
+        public event clickaddfeeder ClickAddFeeder;
         private readonly ApplicationContext _context;
         public AdminView(ApplicationContext context)
         {
@@ -75,6 +83,41 @@ namespace View
         private void requestsList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void addFeeder_Click(object sender, EventArgs e)
+        { 
+            ClickAddFeeder?.Invoke(feederNameInput.Text, userSelect.Text, FeederType);
+        }
+
+        private void dispencerFeeder_CheckedChanged(object sender, EventArgs e)
+        {
+            FeederType = "dispencer";
+        }
+
+        private void screwFeeder_CheckedChanged(object sender, EventArgs e)
+        {
+            FeederType = "screw";
+        }
+
+        public void UpdateUsers(IEnumerable<string> userNames)
+        {
+            userSelect.Items.Clear();
+            foreach (var item in userNames)
+            {
+                userSelect.Items.Add(item);
+            }
+            
+        }
+
+        public void UpdateFeeders(IEnumerable<string> feederNames)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateRequests()
+        {
+            throw new NotImplementedException();
         }
     }
 }

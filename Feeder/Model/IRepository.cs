@@ -11,9 +11,10 @@ namespace Model
     {
 
         int Add(T obj);
-        T Find(string Name);
-        bool CheckForOverlaps(T obj);
+        //T Find(string Name);
+        //bool CheckForOverlaps(T obj);
         IEnumerable<T> GetAll();
+        void Update(T obj);
 
     }
 }
