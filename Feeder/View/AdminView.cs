@@ -13,8 +13,6 @@ namespace View
 {
     public partial class AdminView : Form, IAdminView
     {
-
-        public string FeederType;
         public delegate void registernewuser(string name);
         public delegate void clickaddfeeder(string name, string userName, string type);
         public event registernewuser registerNewUser;
@@ -82,18 +80,8 @@ namespace View
         }
 
         private void addFeeder_Click(object sender, EventArgs e)
-        { 
-            ClickAddFeeder?.Invoke(feederNameInput.Text, userSelect.Text, FeederType);
-        }
-
-        private void dispencerFeeder_CheckedChanged(object sender, EventArgs e)
         {
-            FeederType = "dispencer";
-        }
-
-        private void screwFeeder_CheckedChanged(object sender, EventArgs e)
-        {
-            FeederType = "screw";
+            ClickAddFeeder?.Invoke(feederNameInput.Text, userSelect.Items[0].ToString(), textBox1.Text);
         }
 
         public void UpdateUsers(IEnumerable<string> userNames)
@@ -114,6 +102,21 @@ namespace View
         public void UpdateRequests()
         {
             throw new NotImplementedException();
+        }
+
+        private void feederNameInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userSelect_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

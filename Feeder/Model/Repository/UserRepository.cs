@@ -18,9 +18,14 @@ namespace Feeder.Model.Repository
         {
             return currentUser;
         }
+
+
+        public void SetCurrentUser(User user)
+        {
+            currentUser = user;
+        }
         public void AddFeeder(FeederEntity feeder)
         {
-            User currentUser = GetCurrentUser();
             currentUser.Feeders.Add(feeder);
         }
         public int Add(User obj)
@@ -35,6 +40,7 @@ namespace Feeder.Model.Repository
             obj.Id = _end_index;
             _end_index++;
             _data.Add(obj);
+            SetCurrentUser(obj);
             return obj.Id;
         }
 

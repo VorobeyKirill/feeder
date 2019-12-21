@@ -16,21 +16,21 @@ namespace Feeder.Model.Service
         private readonly IRepository<FeederEntity> _feederRepository;
         private readonly IRepository<User> _userRepository;
         private readonly UserRepository _repository;
-        public FeederService(IRepository<FeederEntity> feederRepository)
+        public FeederService(IRepository<FeederEntity> feederRepository, UserRepository repository)
         {
             _feederRepository = feederRepository;
+            _repository = repository;
         }
         public void AddFeeder(FeederEntity feeder)
         {
             _feederRepository.Add(feeder);
             
-            foreach(var item in _feederRepository.GetAll())
+            /*foreach(var item in _feederRepository.GetAll())
             {
-                if(item.UserName == _repository.GetCurrentUser().Name)
-                {
-                    _repository.AddFeeder(item);
-                }
-            }
+                
+                 _repository.AddFeeder(item);
+                
+            }*/
             UpdateFeeders?.Invoke();
         }
     }

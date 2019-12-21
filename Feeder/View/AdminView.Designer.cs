@@ -32,23 +32,22 @@
             this.logs = new System.Windows.Forms.DataGridView();
             this.exportLog = new System.Windows.Forms.Button();
             this.mainPage = new System.Windows.Forms.TabPage();
-            this.screwFeeder = new System.Windows.Forms.RadioButton();
-            this.dispencerFeeder = new System.Windows.Forms.RadioButton();
             this.listView1 = new System.Windows.Forms.ListView();
             this.userSelect = new System.Windows.Forms.ComboBox();
             this.feederNameInput = new System.Windows.Forms.TextBox();
             this.userNameInput = new System.Windows.Forms.TextBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.addFeeder = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.userList = new System.Windows.Forms.DataGridView();
             this.addUser = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.logPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logs)).BeginInit();
             this.mainPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userList)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,16 +84,17 @@
             // 
             // mainPage
             // 
-            this.mainPage.Controls.Add(this.screwFeeder);
-            this.mainPage.Controls.Add(this.dispencerFeeder);
+            this.mainPage.Controls.Add(this.label4);
+            this.mainPage.Controls.Add(this.label3);
+            this.mainPage.Controls.Add(this.label2);
+            this.mainPage.Controls.Add(this.label1);
+            this.mainPage.Controls.Add(this.textBox1);
             this.mainPage.Controls.Add(this.listView1);
             this.mainPage.Controls.Add(this.userSelect);
             this.mainPage.Controls.Add(this.feederNameInput);
             this.mainPage.Controls.Add(this.userNameInput);
-            this.mainPage.Controls.Add(this.dataGridView3);
             this.mainPage.Controls.Add(this.addFeeder);
             this.mainPage.Controls.Add(this.button1);
-            this.mainPage.Controls.Add(this.userList);
             this.mainPage.Controls.Add(this.addUser);
             this.mainPage.Location = new System.Drawing.Point(4, 22);
             this.mainPage.Name = "mainPage";
@@ -104,31 +104,6 @@
             this.mainPage.Text = "Register and add feeders";
             this.mainPage.UseVisualStyleBackColor = true;
             this.mainPage.Click += new System.EventHandler(this.mainPage_Click);
-            // 
-            // screwFeeder
-            // 
-            this.screwFeeder.AutoSize = true;
-            this.screwFeeder.Location = new System.Drawing.Point(140, 190);
-            this.screwFeeder.Name = "screwFeeder";
-            this.screwFeeder.Size = new System.Drawing.Size(78, 17);
-            this.screwFeeder.TabIndex = 21;
-            this.screwFeeder.TabStop = true;
-            this.screwFeeder.Text = "With screw";
-            this.screwFeeder.UseVisualStyleBackColor = true;
-            this.screwFeeder.CheckedChanged += new System.EventHandler(this.screwFeeder_CheckedChanged);
-            // 
-            // dispencerFeeder
-            // 
-            this.dispencerFeeder.AutoSize = true;
-            this.dispencerFeeder.Checked = true;
-            this.dispencerFeeder.Location = new System.Drawing.Point(18, 190);
-            this.dispencerFeeder.Name = "dispencerFeeder";
-            this.dispencerFeeder.Size = new System.Drawing.Size(95, 17);
-            this.dispencerFeeder.TabIndex = 20;
-            this.dispencerFeeder.TabStop = true;
-            this.dispencerFeeder.Text = "With dispenser";
-            this.dispencerFeeder.UseVisualStyleBackColor = true;
-            this.dispencerFeeder.CheckedChanged += new System.EventHandler(this.dispencerFeeder_CheckedChanged);
             // 
             // listView1
             // 
@@ -141,17 +116,19 @@
             // userSelect
             // 
             this.userSelect.FormattingEnabled = true;
-            this.userSelect.Location = new System.Drawing.Point(127, 163);
+            this.userSelect.Location = new System.Drawing.Point(150, 69);
             this.userSelect.Name = "userSelect";
             this.userSelect.Size = new System.Drawing.Size(121, 21);
             this.userSelect.TabIndex = 18;
+            this.userSelect.SelectedIndexChanged += new System.EventHandler(this.userSelect_SelectedIndexChanged_1);
             // 
             // feederNameInput
             // 
-            this.feederNameInput.Location = new System.Drawing.Point(6, 164);
+            this.feederNameInput.Location = new System.Drawing.Point(8, 70);
             this.feederNameInput.Name = "feederNameInput";
             this.feederNameInput.Size = new System.Drawing.Size(107, 20);
             this.feederNameInput.TabIndex = 17;
+            this.feederNameInput.TextChanged += new System.EventHandler(this.feederNameInput_TextChanged);
             // 
             // userNameInput
             // 
@@ -161,18 +138,10 @@
             this.userNameInput.TabIndex = 8;
             this.userNameInput.TextChanged += new System.EventHandler(this.userNameInput_TextChanged);
             // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(242, 152);
-            this.dataGridView3.TabIndex = 16;
-            // 
             // addFeeder
             // 
             this.addFeeder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addFeeder.Location = new System.Drawing.Point(67, 213);
+            this.addFeeder.Location = new System.Drawing.Point(82, 208);
             this.addFeeder.Name = "addFeeder";
             this.addFeeder.Size = new System.Drawing.Size(110, 33);
             this.addFeeder.TabIndex = 15;
@@ -189,14 +158,6 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "Clear";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // userList
-            // 
-            this.userList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.userList.Location = new System.Drawing.Point(299, 6);
-            this.userList.Name = "userList";
-            this.userList.Size = new System.Drawing.Size(177, 77);
-            this.userList.TabIndex = 6;
             // 
             // addUser
             // 
@@ -220,6 +181,50 @@
             this.tabControl1.Size = new System.Drawing.Size(510, 342);
             this.tabControl1.TabIndex = 0;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(82, 136);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(107, 20);
+            this.textBox1.TabIndex = 20;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(103, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Create feeder";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(235, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "User";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(117, 120);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Type";
+            // 
             // AdminView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,8 +237,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.logs)).EndInit();
             this.mainPage.ResumeLayout(false);
             this.mainPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userList)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -245,17 +248,18 @@
         private System.Windows.Forms.DataGridView logs;
         private System.Windows.Forms.Button exportLog;
         private System.Windows.Forms.TabPage mainPage;
-        private System.Windows.Forms.RadioButton screwFeeder;
-        private System.Windows.Forms.RadioButton dispencerFeeder;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ComboBox userSelect;
         private System.Windows.Forms.TextBox feederNameInput;
         private System.Windows.Forms.TextBox userNameInput;
-        private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Button addFeeder;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView userList;
         private System.Windows.Forms.Button addUser;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

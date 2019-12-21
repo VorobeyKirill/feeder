@@ -22,7 +22,7 @@ namespace Model.Entity
         public FeederEntity(string name, string userName, string type)
         {
             Name = name;
-            userName = userName;
+            UserName = userName;
             Type = type;
         }
     }
