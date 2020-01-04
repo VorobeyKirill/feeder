@@ -81,7 +81,7 @@ namespace View
 
         private void addFeeder_Click(object sender, EventArgs e)
         {
-            ClickAddFeeder?.Invoke(feederNameInput.Text, userSelect.Items[0].ToString(), textBox1.Text);
+            ClickAddFeeder?.Invoke(feederNameInput.Text, userSelect.Items[0].ToString(), feederType.Text);
         }
 
         public void UpdateUsers(IEnumerable<string> userNames)

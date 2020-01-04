@@ -24,6 +24,11 @@ namespace Feeder.Model.Repository
         {
             currentUser = user;
         }
+        public void AddFeeder(FeederEntity feeder, string userName)
+        {
+            User user = Find(userName);
+            user.Feeders.Add(feeder);
+        }
         public void AddFeeder(FeederEntity feeder)
         {
             currentUser.Feeders.Add(feeder);
@@ -59,6 +64,11 @@ namespace Feeder.Model.Repository
         public User Find(string Name)
         {
             return _data.Find(c => c.Name == Name);
+        }
+
+        public List<FeederEntity> GetFeeders(string userName)
+        {
+            return Find(userName).Feeders;
         }
 
         public IEnumerable<User> GetAll()

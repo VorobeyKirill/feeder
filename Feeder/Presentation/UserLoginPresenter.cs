@@ -30,7 +30,7 @@ namespace Feeder.Presenter.Implementations
             bool test = _service.CheckForUser(user);
             if (_service.CheckForUser(user))
             {
-               _kernel.Get<UserPresenter>().Run();
+               _kernel.Get<UserPresenter>().Run(name);
                _view.Close();
             }
          

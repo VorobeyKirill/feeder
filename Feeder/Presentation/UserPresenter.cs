@@ -19,6 +19,7 @@ namespace Feeder.Presenter.Implementations
         private IUserView _view;
         private IUserService _userService;
         private IFeederService _feederService;
+        private User _user;
 
         public UserPresenter(IKernel kernel, IAdminService service, IUserView view, IUserService userService, IFeederService feederService)
         {
@@ -28,14 +29,17 @@ namespace Feeder.Presenter.Implementations
             _view = view;
             _view.createFeeder += createFeeder;
             _feederService = feederService;
-            _feederService.UpdateFeeders += () => UpdateFeeders();
+            _userService.UpdateFeeders += () => UpdateFeeders(_user.Name);
         }
 
         private void UpdateFeeders()
         {
             _view.UpdateFeeders(_userService.CurrentUser.Feeders);
         }
-
+        private void UpdateFeeders(string userName)
+        {
+            _view.UpdateFeeders(_userService.GetFeeders(userName));    
+        }
         private void createFeeder(string type, string name)
         {
             var feeder = new FeederEntity();
@@ -43,9 +47,12 @@ namespace Feeder.Presenter.Implementations
             feeder.Name = name;
         }
 
-        public void Run()
+        public void Run(string userName)
         {
+            _user = _userService.Find(userName);
             _view.Show();
+            UpdateFeeders(_user.Name);
+
         }
 
     }

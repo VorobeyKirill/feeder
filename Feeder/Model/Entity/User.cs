@@ -10,7 +10,7 @@ namespace Model.Entity
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<FeederEntity> Feeders { get; }
+        public List<FeederEntity> Feeders { get; } = new List<FeederEntity>();
         public User()
         {
         }
@@ -18,12 +18,14 @@ namespace Model.Entity
         public User(string name)
         {
             Name = name;
+          //  Feeders = new List<FeederEntity>();
         }
 
         public User(int id, string name)
         {
             Id = id;
             Name = name;
+            //Feeders = new List<FeederEntity>();
         }
     }
 }

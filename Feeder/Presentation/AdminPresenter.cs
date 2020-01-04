@@ -38,6 +38,7 @@ namespace Feeder.Presenter.Implementations
         {
             var feeder = new FeederEntity(name, userName, type);
             _feederService.AddFeeder(feeder);
+            _userService.AddFeeder(feeder, userName);
         }
 
         public void RegisterNewUser(string name)
@@ -60,6 +61,10 @@ namespace Feeder.Presenter.Implementations
         {
             _adminView.UpdateFeeders(_adminService.SelectedUser.Feeders.Select(f => f.Name).ToList());
 
+        }
+        private void UpdateFeeders(string userName)
+        {
+            
         }
 
         public void Run()

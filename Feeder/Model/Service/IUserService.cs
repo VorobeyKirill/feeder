@@ -9,8 +9,12 @@ namespace Model.Service
 {
     public interface IUserService : IService
     {
+        event Action UpdateFeeders;
         User CurrentUser { get; set; }
 
         void RegisterUser(User user);
+        void AddFeeder(FeederEntity feeder, string userName);
+        User Find(string userName);
+        List<FeederEntity> GetFeeders(string userName);
     }
 }
